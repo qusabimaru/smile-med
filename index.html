@@ -8,7 +8,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="styles.css?v=20260329">
 </head>
 <body class="page-home">
   <header class="header" id="header">
@@ -186,8 +186,7 @@
           </div>
         </div>
         <div class="section__footer reviews__cta reveal" data-reveal-delay="60">
-          <a href="#" class="btn btn--secondary">Оставить отзыв</a>
-          <span class="placeholder-tag">затычка — ссылка на 2ГИС или Яндекс.Карты</span>
+          <a href="https://yandex.ru/maps/org/smayl_med/218794255006/?ll=42.889830%2C44.054283&z=17.06" class="btn btn--secondary">Оставить отзыв</a>
         </div>
       </div>
     </section>
@@ -195,12 +194,20 @@
     <section class="section section--muted" id="gallery">
       <div class="container">
         <h2 class="section__title reveal">Галерея</h2>
-        <p class="section__lead reveal" data-reveal-delay="60">Затычка: сюда можно добавить фото клиники, оборудования и команды.</p>
+        <p class="section__lead reveal" data-reveal-delay="60">Фасад клиники, интерьеры и кабинеты «Смайл. Мед» в Ессентуках.</p>
         <div class="grid grid--gallery">
-          <div class="ph-card reveal" data-reveal-delay="0">Фото 1 (затычка)</div>
-          <div class="ph-card reveal" data-reveal-delay="80">Фото 2 (затычка)</div>
-          <div class="ph-card reveal" data-reveal-delay="160">Фото 3 (затычка)</div>
-          <div class="ph-card reveal" data-reveal-delay="240">Фото 4 (затычка)</div>
+          <figure class="gallery-card reveal" data-reveal-delay="0">
+            <img src="img/gallery-1.png" alt="Вывеска и вход в медицинский центр «Смайл. Мед»" width="800" height="600" loading="lazy" />
+          </figure>
+          <figure class="gallery-card reveal" data-reveal-delay="80">
+            <img src="img/gallery-2.png" alt="Интерьер клиники, коридор и зона ожидания" width="800" height="600" loading="lazy" />
+          </figure>
+          <figure class="gallery-card reveal" data-reveal-delay="160">
+            <img src="img/gallery-3.png" alt="Стоматологический кабинет с креслом и оборудованием" width="800" height="600" loading="lazy" />
+          </figure>
+          <figure class="gallery-card reveal" data-reveal-delay="240">
+            <img src="img/gallery-4.png" alt="Зона ресепшна и ожидания" width="800" height="600" loading="lazy" />
+          </figure>
         </div>
       </div>
     </section>
@@ -208,7 +215,7 @@
     <section class="section" id="works">
       <div class="container">
         <h2 class="section__title reveal">Фото работ</h2>
-        <p class="section__lead reveal" data-reveal-delay="60">Затычка: блок «до / после». Лучше использовать реальные кейсы с разрешения пациентов.</p>
+        <p class="section__lead reveal" data-reveal-delay="60">Блок «до / после».</p>
         <div class="grid grid--works">
           <div class="ph-card ph-card--wide ba-card--span reveal" data-reveal-delay="0">
             <div class="ba-slider" data-ba-slider aria-label="Слайдер до и после">
@@ -244,7 +251,40 @@
               />
             </div>
           </div>
-          <div class="ph-card ph-card--wide reveal reveal--right" data-reveal-delay="120">Кейс 2: до/после (затычка)</div>
+          <div class="ph-card ph-card--wide ba-card--span reveal" data-reveal-delay="120">
+            <div class="ba-slider" data-ba-slider aria-label="Слайдер до и после, кейс 2">
+              <div class="ba-stage" aria-hidden="true">
+                <img
+                  class="ba-img ba-img--after"
+                  src="img/works2-after.png"
+                  alt=""
+                />
+                <div class="ba-clip" data-ba-clip>
+                  <img
+                    class="ba-img ba-img--before"
+                    src="img/works2-before.png"
+                    alt=""
+                  />
+                </div>
+                <div class="ba-divider" data-ba-divider></div>
+                <div class="ba-handle" data-ba-handle></div>
+
+                <div class="ba-label ba-label--before">До</div>
+                <div class="ba-label ba-label--after">После</div>
+              </div>
+
+              <input
+                class="ba-range"
+                type="range"
+                min="0"
+                max="100"
+                value="50"
+                step="1"
+                aria-label="Перетаскивание до/после, второй кейс"
+                data-ba-range
+              />
+            </div>
+          </div>
         </div>
       </div>
     </section>
@@ -385,6 +425,6 @@
     </div>
   </div>
 
-  <script src="script.js"></script>
+  <script src="script.js?v=20260326"></script>
 </body>
 </html>
