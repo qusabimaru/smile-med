@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Врачи — Смайл. Мед (Ессентуки)</title>
+  <meta name="description" content="Наша команда — стоматологи клиники «Smile-Med» Ессентуки. Специалисты по терапии, хирургии, ортопедии и гигиене.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="header header--scrolled" id="header">
+    <div class="container header__inner">
+      <a href="index.html#top" class="logo" aria-label="Смайл. Мед — на главную">
+        <span class="logo__mark">Смайл</span><span class="logo__dot">.</span><span class="logo__med">Мед</span>
+      </a>
+      <nav class="nav" aria-label="Основное меню">
+        <a class="nav__link" href="index.html#services">Услуги</a>
+        <a class="nav__link" href="index.html#advantages">Преимущества</a>
+        <a class="nav__link" href="index.html#reviews">Отзывы</a>
+        <a class="nav__link" href="doctors.html" aria-current="page">Врачи</a>
+        <a class="nav__link" href="index.html#contacts">Контакты</a>
+      </nav>
+      <div class="header__meta">
+        <p class="header__address">Ессентуки, ул. Пятигорская, 117</p>
+        <a class="header__phone" href="tel:+79288243161">+7 (928) 824-31-61</a>
+      </div>
+      <a class="btn btn--primary header__cta" href="index.html#lead">Записаться</a>
+      <button type="button" class="header__burger" aria-label="Открыть меню" aria-expanded="false" data-burger>
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <nav class="nav-mobile" id="nav-mobile" hidden data-nav-mobile>
+      <a href="tel:+79288243161" class="nav-mobile__link">Позвонить</a>
+      <a href="index.html#services" class="nav-mobile__link">Услуги</a>
+      <a href="index.html#advantages" class="nav-mobile__link">О клинике</a>
+      <a href="index.html#reviews" class="nav-mobile__link">Отзывы</a>
+      <a href="doctors.html" class="nav-mobile__link">Врачи</a>
+      <a href="index.html#lead" class="nav-mobile__link">Запись</a>
+      <a href="index.html#contacts" class="nav-mobile__link">Контакты</a>
+      <a class="btn btn--primary btn--block" href="index.html#lead">Записаться</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="section team">
+      <div class="container">
+        <p class="team__title reveal"><strong>Наша команда — стоматологи клиники «Smile-Med» Ессентуки</strong></p>
+        <div class="team-grid">
+          <article class="team-card reveal reveal--left" data-reveal-delay="0">
+            <img class="team-card__photo" src="C:\Users\Shikoraye\.cursor\projects\c-Users-Shikoraye-Desktop\assets\c__Users_Shikoraye_AppData_Roaming_Cursor_User_workspaceStorage_6540579d7487d10575af384dda130893_images_zolo1-b21d14d3-6ab6-4e11-ac97-f24e7706896b.png" alt="Фото врача (затычка)">
+            <h2 class="team-card__name">Кузнецов Артём Сергеевич</h2>
+            <p class="team-card__role">Врач-стоматолог терапевт</p>
+          </article>
+          <article class="team-card reveal reveal--right" data-reveal-delay="80">
+            <img class="team-card__photo" src="C:\Users\Shikoraye\.cursor\projects\c-Users-Shikoraye-Desktop\assets\c__Users_Shikoraye_AppData_Roaming_Cursor_User_workspaceStorage_6540579d7487d10575af384dda130893_images_zolo2-1fe5aba1-97a8-4f7f-8e2d-7bc645c92d7e.png" alt="Фото врача (затычка)">
+            <h2 class="team-card__name">Соколова Мария Игоревна</h2>
+            <p class="team-card__role">Врач-стоматолог гигиенист</p>
+          </article>
+          <article class="team-card reveal reveal--left" data-reveal-delay="160">
+            <img class="team-card__photo" src="C:\Users\Shikoraye\.cursor\projects\c-Users-Shikoraye-Desktop\assets\c__Users_Shikoraye_AppData_Roaming_Cursor_User_workspaceStorage_6540579d7487d10575af384dda130893_images_zolo3-2aaf227e-598e-42b7-be0f-dbc8e1c4a59e.png" alt="Фото врача (затычка)">
+            <h2 class="team-card__name">Громов Кирилл Андреевич</h2>
+            <p class="team-card__role">Врач-стоматолог ортопед</p>
+          </article>
+          <article class="team-card reveal reveal--right" data-reveal-delay="240">
+            <img class="team-card__photo" src="C:\Users\Shikoraye\.cursor\projects\c-Users-Shikoraye-Desktop\assets\c__Users_Shikoraye_AppData_Roaming_Cursor_User_workspaceStorage_6540579d7487d10575af384dda130893_images_____-dc73ddb7-f396-4b4d-a460-c5b9e0bf2b2b.png" alt="Фото врача (затычка)">
+            <h2 class="team-card__name">Волков Дмитрий Олегович</h2>
+            <p class="team-card__role">Врач-стоматолог хирург</p>
+          </article>
+        </div>
+        <p class="placeholder-tag team__note reveal" data-reveal-delay="120">Примечание: фото подключены из локальных файлов (затычка). Для публикации перенесём их в папку проекта.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer__inner reveal">
+      <p class="footer__brand">«Смайл. Мед» — медицинский центр, стоматология</p>
+      <p class="footer__legal">Имеются противопоказания, необходима консультация специалиста.</p>
+      <p class="footer__copy">&copy; <span data-year></span>. Сайт-заготовка с затычками.</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
+

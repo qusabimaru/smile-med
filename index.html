@@ -16,6 +16,26 @@
       <a href="#top" class="logo" aria-label="Смайл. Мед — на главную">
         <span class="logo__mark">Смайл</span><span class="logo__dot">.</span><span class="logo__med">Мед</span>
       </a>
+      <nav class="nav" aria-label="Основное меню">
+        <a class="nav__link" href="#services">Услуги</a>
+        <a class="nav__link" href="#advantages">Преимущества</a>
+
+        <div class="nav__dropdown">
+          <a class="nav__link nav__link--dropdown" href="#about" aria-haspopup="true">
+            О нас
+            <span class="nav__chev" aria-hidden="true"></span>
+          </a>
+          <div class="nav__menu" role="menu">
+            <a class="nav__item" role="menuitem" href="#reviews">Отзывы</a>
+            <a class="nav__item" role="menuitem" href="#gallery">Галерея</a>
+            <a class="nav__item" role="menuitem" href="#works">Фото работ</a>
+            <a class="nav__item" role="menuitem" href="#news">Новости</a>
+          </div>
+        </div>
+
+        <a class="nav__link" href="doctors.html">Врачи</a>
+        <a class="nav__link" href="#contacts">Контакты</a>
+      </nav>
       <div class="header__meta">
         <p class="header__address">Ессентуки, ул. Пятигорская, 117</p>
         <a class="header__phone" href="tel:+79288243161">+7 (928) 824-31-61</a>
@@ -30,6 +50,10 @@
       <a href="#services" class="nav-mobile__link">Услуги</a>
       <a href="#advantages" class="nav-mobile__link">О клинике</a>
       <a href="#reviews" class="nav-mobile__link">Отзывы</a>
+      <a href="#gallery" class="nav-mobile__link">Галерея</a>
+      <a href="#works" class="nav-mobile__link">Фото работ</a>
+      <a href="#news" class="nav-mobile__link">Новости</a>
+      <a href="doctors.html" class="nav-mobile__link">Врачи</a>
       <a href="#lead" class="nav-mobile__link">Запись</a>
       <a href="#contacts" class="nav-mobile__link">Контакты</a>
       <button type="button" class="btn btn--primary btn--block" data-open-modal="appointment">Записаться</button>
@@ -77,9 +101,32 @@
             <p class="card__text">Профессиональная гигиена полости рта и профилактика заболеваний дёсен.</p>
           </article>
         </div>
-        <div class="section__footer reveal" data-reveal-delay="100">
-          <a href="#" class="btn btn--ghost" id="price-placeholder">Скачать / открыть прайс-лист</a>
-          <span class="placeholder-tag">затычка — укажите ссылку на PDF</span>
+        <div class="services__price reveal" data-reveal-delay="100" aria-label="Мини-прайс (затычка)">
+          <h3 class="services__price-title">Прайс-лист (затычка)</h3>
+          <div class="price-mini">
+            <div class="price-mini__row">
+              <span class="price-mini__name">Консультация</span>
+              <span class="price-mini__price">0 ₽</span>
+            </div>
+            <div class="price-mini__row">
+              <span class="price-mini__name">Профгигиена</span>
+              <span class="price-mini__price">от 2 500 ₽</span>
+            </div>
+            <div class="price-mini__row">
+              <span class="price-mini__name">Лечение кариеса</span>
+              <span class="price-mini__price">от 3 500 ₽</span>
+            </div>
+            <div class="price-mini__row">
+              <span class="price-mini__name">Удаление зуба</span>
+              <span class="price-mini__price">от 2 800 ₽</span>
+            </div>
+            <div class="price-mini__row">
+              <span class="price-mini__name">Коронка (металлокерамика)</span>
+              <span class="price-mini__price">от 12 000 ₽</span>
+            </div>
+            <a href="#" class="btn btn--outline btn--block price-mini__btn" id="price-placeholder">Полный прайс (PDF)</a>
+            <span class="placeholder-tag">затычка — укажите ссылку на PDF</span>
+          </div>
         </div>
       </div>
     </section>
@@ -136,6 +183,51 @@
         <div class="section__footer reviews__cta reveal" data-reveal-delay="60">
           <a href="#" class="btn btn--secondary">Оставить отзыв</a>
           <span class="placeholder-tag">затычка — ссылка на 2ГИС или Яндекс.Карты</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--muted" id="gallery">
+      <div class="container">
+        <h2 class="section__title reveal">Галерея</h2>
+        <p class="section__lead reveal" data-reveal-delay="60">Затычка: сюда можно добавить фото клиники, оборудования и команды.</p>
+        <div class="grid grid--gallery">
+          <div class="ph-card reveal" data-reveal-delay="0">Фото 1 (затычка)</div>
+          <div class="ph-card reveal" data-reveal-delay="80">Фото 2 (затычка)</div>
+          <div class="ph-card reveal" data-reveal-delay="160">Фото 3 (затычка)</div>
+          <div class="ph-card reveal" data-reveal-delay="240">Фото 4 (затычка)</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="works">
+      <div class="container">
+        <h2 class="section__title reveal">Фото работ</h2>
+        <p class="section__lead reveal" data-reveal-delay="60">Затычка: блок «до / после». Лучше использовать реальные кейсы с разрешения пациентов.</p>
+        <div class="grid grid--works">
+          <div class="ph-card ph-card--wide reveal reveal--left" data-reveal-delay="0">Кейс 1: до/после (затычка)</div>
+          <div class="ph-card ph-card--wide reveal reveal--right" data-reveal-delay="120">Кейс 2: до/после (затычка)</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--muted" id="news">
+      <div class="container">
+        <h2 class="section__title reveal">Новости</h2>
+        <p class="section__lead reveal" data-reveal-delay="60">Затычка: акции, изменения графика, новые услуги, полезные статьи.</p>
+        <div class="grid grid--news">
+          <article class="card reveal" data-reveal-delay="0">
+            <h3 class="card__title">Новость №1 (затычка)</h3>
+            <p class="card__text">Короткое описание новости. Замените на реальные анонсы клиники.</p>
+          </article>
+          <article class="card reveal" data-reveal-delay="80">
+            <h3 class="card__title">Новость №2 (затычка)</h3>
+            <p class="card__text">Пример текста для проверки верстки и адаптива на телефоне.</p>
+          </article>
+          <article class="card reveal" data-reveal-delay="160">
+            <h3 class="card__title">Новость №3 (затычка)</h3>
+            <p class="card__text">Еще одна карточка, чтобы сетка выглядела заполненной.</p>
+          </article>
         </div>
       </div>
     </section>
