@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Стоматология в Ессентуках — клиника Смайл. Мед | Лечение зубов</title>
+  <meta name="description" content="Медицинский центр «Смайл. Мед» в Ессентуках. Качественные стоматологические услуги, лечение и удаление зубов. Запись по телефону: +7 (928) 824-31-61.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="header" id="header">
+    <div class="container header__inner">
+      <a href="#top" class="logo" aria-label="Смайл. Мед — на главную">
+        <span class="logo__mark">Смайл</span><span class="logo__dot">.</span><span class="logo__med">Мед</span>
+      </a>
+      <div class="header__meta">
+        <p class="header__address">Ессентуки, ул. Пятигорская, 117</p>
+        <a class="header__phone" href="tel:+79288243161">+7 (928) 824-31-61</a>
+      </div>
+      <button type="button" class="btn btn--primary header__cta" data-open-modal="appointment">Записаться на прием</button>
+      <button type="button" class="header__burger" aria-label="Открыть меню" aria-expanded="false" data-burger>
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <nav class="nav-mobile" id="nav-mobile" hidden data-nav-mobile>
+      <a href="tel:+79288243161" class="nav-mobile__link">Позвонить</a>
+      <a href="#services" class="nav-mobile__link">Услуги</a>
+      <a href="#advantages" class="nav-mobile__link">О клинике</a>
+      <a href="#reviews" class="nav-mobile__link">Отзывы</a>
+      <a href="#lead" class="nav-mobile__link">Запись</a>
+      <a href="#contacts" class="nav-mobile__link">Контакты</a>
+      <button type="button" class="btn btn--primary btn--block" data-open-modal="appointment">Записаться</button>
+    </nav>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div class="hero__bg" role="img" aria-label="Затычка: фото интерьера клиники"></div>
+      <div class="hero__overlay"></div>
+      <div class="container hero__content">
+        <h1 class="hero__title reveal">Современная стоматология «Смайл. Мед» в Ессентуках</h1>
+        <p class="hero__subtitle reveal" data-reveal-delay="70">Профессиональное лечение зубов для всей семьи. Запишитесь на бесплатную консультацию!</p>
+        <div class="hero__actions reveal" data-reveal-delay="140">
+          <button type="button" class="btn btn--primary btn--lg" data-open-modal="appointment">Записаться онлайн</button>
+          <a class="btn btn--outline btn--lg" href="https://wa.me/79288243161" target="_blank" rel="noopener noreferrer">Написать в WhatsApp</a>
+        </div>
+        <p class="hero__note placeholder-note reveal" data-reveal-delay="210">Фоновое фото — затычка. Позже замените на снимок кабинета или команды.</p>
+      </div>
+    </section>
+
+    <section class="section" id="services">
+      <div class="container">
+        <h2 class="section__title reveal">Наши услуги</h2>
+        <p class="section__lead reveal" data-reveal-delay="60">Основные направления лечения. Полный перечень и актуальные цены — в прайс-листе (затычка).</p>
+        <div class="grid grid--services">
+          <article class="card reveal" data-reveal-delay="0">
+            <div class="card__icon" aria-hidden="true">🦷</div>
+            <h3 class="card__title">Терапия</h3>
+            <p class="card__text">Лечение кариеса, пульпита и восстановление зубов с акцентом на сохранение тканей.</p>
+          </article>
+          <article class="card reveal" data-reveal-delay="80">
+            <div class="card__icon" aria-hidden="true">✨</div>
+            <h3 class="card__title">Хирургия</h3>
+            <p class="card__text">Безболезненное удаление зубов, подготовка к протезированию и имплантации.</p>
+          </article>
+          <article class="card reveal" data-reveal-delay="160">
+            <div class="card__icon" aria-hidden="true">👑</div>
+            <h3 class="card__title">Ортопедия</h3>
+            <p class="card__text">Протезирование, коронки и восстановление жевательной функции и эстетики улыбки.</p>
+          </article>
+          <article class="card reveal" data-reveal-delay="240">
+            <div class="card__icon" aria-hidden="true">💧</div>
+            <h3 class="card__title">Профгигиена и чистка</h3>
+            <p class="card__text">Профессиональная гигиена полости рта и профилактика заболеваний дёсен.</p>
+          </article>
+        </div>
+        <div class="section__footer reveal" data-reveal-delay="100">
+          <a href="#" class="btn btn--ghost" id="price-placeholder">Скачать / открыть прайс-лист</a>
+          <span class="placeholder-tag">затычка — укажите ссылку на PDF</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--muted" id="advantages">
+      <div class="container">
+        <h2 class="section__title reveal">Почему выбирают нас</h2>
+        <ul class="advantages">
+          <li class="advantages__item reveal reveal--left" data-reveal-delay="0">
+            <strong>Опытные врачи</strong>
+            <span>Команда специалистов со стажем от [затычка] лет — уточните цифры у руководства.</span>
+          </li>
+          <li class="advantages__item reveal reveal--right" data-reveal-delay="80">
+            <strong>Современное оборудование</strong>
+            <span>Диагностика и лечение с использованием актуальных технологий (описание — затычка).</span>
+          </li>
+          <li class="advantages__item reveal reveal--left" data-reveal-delay="160">
+            <strong>Безопасность и стерильность</strong>
+            <span>Соблюдение санитарных норм и контроль инфекционной безопасности на всех этапах.</span>
+          </li>
+          <li class="advantages__item reveal reveal--right" data-reveal-delay="240">
+            <strong>Удобное расположение</strong>
+            <span>Ессентуки, ул. Пятигорская, 117, 3 этаж. Парковка: [затычка — уточнить у заказчика].</span>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="section" id="reviews">
+      <div class="container">
+        <h2 class="section__title reveal">Отзывы пациентов</h2>
+        <div class="reviews reveal reveal--scale" data-carousel data-reveal-delay="80">
+          <div class="reviews__viewport">
+            <div class="reviews__track" data-carousel-track>
+              <blockquote class="review">
+                <p>«Затычка отзыва. После лечения все прошло комфортно. Персонал внимательный, клиника чистая.»</p>
+                <cite>Имя пациента — затычка</cite>
+              </blockquote>
+              <blockquote class="review">
+                <p>«Второй затычочный отзыв про гигиену и консультацию. Можно заменить на реальные цитаты из 2ГИС.»</p>
+                <cite>Инициалы — затычка</cite>
+              </blockquote>
+              <blockquote class="review">
+                <p>«Третий пример текста для карусели длиннее, чтобы проверить переносы на мобильных устройствах.»</p>
+                <cite>Турист, КМВ — затычка</cite>
+              </blockquote>
+            </div>
+          </div>
+          <div class="reviews__controls">
+            <button type="button" class="reviews__btn" aria-label="Предыдущий отзыв" data-carousel-prev>&#8592;</button>
+            <button type="button" class="reviews__btn" aria-label="Следующий отзыв" data-carousel-next>&#8594;</button>
+          </div>
+        </div>
+        <div class="section__footer reviews__cta reveal" data-reveal-delay="60">
+          <a href="#" class="btn btn--secondary">Оставить отзыв</a>
+          <span class="placeholder-tag">затычка — ссылка на 2ГИС или Яндекс.Карты</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--accent" id="lead">
+      <div class="container container--narrow">
+        <h2 class="section__title section__title--light reveal">Остались вопросы? Запишитесь на осмотр!</h2>
+        <form class="lead-form reveal" id="lead-form" data-reveal-delay="90" novalidate>
+          <label class="field">
+            <span class="field__label">Имя</span>
+            <input type="text" name="name" class="field__input" placeholder="Как к вам обращаться" autocomplete="name" required>
+          </label>
+          <label class="field">
+            <span class="field__label">Номер телефона</span>
+            <input type="tel" name="phone" class="field__input" placeholder="+7 (___) ___-__-__" autocomplete="tel" required>
+          </label>
+          <label class="field field--check">
+            <input type="checkbox" name="consent" required>
+            <span class="field__check-text">Согласен(на) на <a href="#" class="link-inline">обработку персональных данных</a> (политика — затычка).</span>
+          </label>
+          <button type="submit" class="btn btn--primary btn--lg btn--block">Жду звонка</button>
+          <p class="form-hint" id="form-hint" role="status" aria-live="polite"></p>
+        </form>
+      </div>
+    </section>
+
+    <section class="section" id="contacts">
+      <div class="container">
+        <h2 class="section__title reveal">Контакты</h2>
+        <div class="contacts-grid">
+          <div class="contacts-info reveal reveal--left" data-reveal-delay="0">
+            <p class="contacts-phone"><a href="tel:+79288243161">+7 (928) 824-31-61</a></p>
+            <p class="contacts-address">Ставропольский край, г. Ессентуки, ул. Пятигорская, 117 <span class="muted">(3 этаж)</span></p>
+            <p class="contacts-hours">Ежедневно с 09:00 до 18:00</p>
+            <p class="contacts-messengers">
+              <a href="https://wa.me/79288243161" class="link-pill" target="_blank" rel="noopener noreferrer">WhatsApp</a>
+              <a href="#" class="link-pill link-pill--placeholder" title="Замените на ссылку Telegram">Telegram</a>
+            </p>
+          </div>
+          <div class="map-placeholder reveal reveal--right" data-reveal-delay="100" aria-label="Карта — затычка">
+            <p><strong>Интерактивная карта</strong></p>
+            <p>Вставьте сюда код виджета 2ГИС или Яндекс.Карт (точка: ул. Пятигорская, 117, Ессентуки).</p>
+             <iframe src="https://yandex.ru/map-widget/v1/?um=constructor%3A05adb067077d9027b439d2a7fa7d95fe98d38d86ae7664909f1ea83dddadd031&amp;source=constructor" width="500" height="400" frameborder="0"></iframe> 
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer__inner reveal">
+      <p class="footer__brand">«Смайл. Мед» — медицинский центр, стоматология</p>
+      <p class="footer__legal">Имеются противопоказания, необходима консультация специалиста.</p>
+      <p class="footer__copy">&copy; <span data-year></span>. Сайт-заготовка с затычками.</p>
+    </div>
+  </footer>
+
+  <!-- Modal: запись -->
+  <div class="modal" id="modal-appointment" hidden data-modal="appointment">
+    <div class="modal__backdrop" data-close-modal></div>
+    <div class="modal__dialog" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+      <button type="button" class="modal__close" aria-label="Закрыть" data-close-modal>&times;</button>
+      <h2 id="modal-title" class="modal__title">Запись на прием</h2>
+      <p class="modal__text">Позвоните нам или напишите в мессенджер — администратор подберет удобное время.</p>
+      <p class="modal__phone"><a href="tel:+79288243161">+7 (928) 824-31-61</a></p>
+      <div class="modal__actions">
+        <a class="btn btn--primary" href="https://wa.me/79288243161" target="_blank" rel="noopener noreferrer">WhatsApp</a>
+        <a href="#" class="btn btn--outline">Telegram <span class="badge-placeholder">затычка</span></a>
+      </div>
+      <button type="button" class="btn btn--ghost btn--block" data-close-modal>Закрыть</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
