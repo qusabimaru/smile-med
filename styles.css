@@ -520,6 +520,142 @@ a:hover {
   gap: 1rem;
 }
 
+.ba-card--span {
+  /* Делаем карточку-область под слайдер без “внутренних отступов” */
+  padding: 0.25rem;
+  align-items: stretch;
+  justify-content: stretch;
+  min-height: auto;
+}
+
+/* Before / After slider */
+.ba-slider {
+  --ba-pos: 50;
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  border-radius: calc(var(--radius) - 2px);
+  overflow: hidden;
+  user-select: none;
+  touch-action: pan-y;
+}
+
+.ba-slider::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.25);
+  opacity: 0;
+  transition: opacity 0.2s ease;
+  z-index: 3;
+  pointer-events: none;
+}
+
+.ba-slider:hover::before,
+.ba-slider[data-dragging="true"]::before {
+  opacity: 1;
+}
+
+.ba-stage {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+}
+
+.ba-img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.ba-img--before {
+  z-index: 1;
+}
+
+.ba-clip {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: calc(var(--ba-pos) * 1%);
+  overflow: hidden;
+  z-index: 2;
+}
+
+.ba-divider {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: calc(var(--ba-pos) * 1%);
+  width: 2px;
+  background: rgba(255, 255, 255, 0.92);
+  transform: translateX(-1px);
+  opacity: 0.9;
+  z-index: 4;
+  pointer-events: none;
+}
+
+.ba-handle {
+  position: absolute;
+  top: 50%;
+  left: calc(var(--ba-pos) * 1%);
+  transform: translate(-50%, -50%);
+  width: 46px;
+  height: 46px;
+  border-radius: 999px;
+  border: 2px solid rgba(255, 255, 255, 0.95);
+  background: rgba(0, 0, 0, 0.15);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.18);
+  z-index: 4;
+  pointer-events: none;
+}
+
+.ba-label {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  padding: 0.45rem 0.75rem;
+  border-radius: 0.65rem;
+  background: rgba(0, 0, 0, 0.38);
+  color: #fff;
+  font-weight: 800;
+  font-size: 0.9rem;
+  opacity: 0;
+  transition:
+    opacity 0.2s ease,
+    transform 0.2s ease;
+  z-index: 5;
+  pointer-events: none;
+}
+
+.ba-label--before {
+  left: 10px;
+}
+
+.ba-label--after {
+  right: 10px;
+}
+
+.ba-slider:hover .ba-label,
+.ba-slider[data-dragging="true"] .ba-label {
+  opacity: 1;
+}
+
+.ba-range {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  cursor: ew-resize;
+  z-index: 6;
+  border: 0;
+  background: transparent;
+}
+
 .grid--news {
   display: grid;
   gap: 1rem;
@@ -591,6 +727,20 @@ a:hover {
 
 .team__note {
   margin-top: 1rem;
+}
+
+.legal-page {
+  padding-top: calc(var(--header-h) + 1.75rem);
+}
+
+.legal-page h2 {
+  margin: 1.25rem 0 0.45rem;
+  font-size: 1.05rem;
+}
+
+.legal-page p {
+  margin: 0 0 0.6rem;
+  color: var(--color-text-muted);
 }
 
 .card {
@@ -873,12 +1023,13 @@ a:hover {
 }
 
 .footer__inner {
-  text-align: center;
+  text-align: right;
 }
 
 .footer__brand {
   margin: 0 0 0.5rem;
   font-weight: 600;
+  text-align: center; /* Возвращаем исходное выравнивание текста */
 }
 
 .footer__legal {
@@ -886,6 +1037,36 @@ a:hover {
   font-size: 0.8125rem;
   line-height: 1.45;
   color: rgba(255, 255, 255, 0.72);
+  text-align: center; /* Возвращаем исходное выравнивание текста */
+}
+
+.footer__policies {
+  margin: 0 0 0.65rem;
+  font-size: 0.8125rem;
+  color: rgba(255, 255, 255, 0.8);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-end;
+  gap: 0.35rem;
+  flex-wrap: nowrap;
+  transform: none;
+}
+
+.footer__policies a {
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.footer__policies a:hover {
+  color: #ffffff;
+}
+
+@media (max-width: 639px) {
+  .footer__policies {
+    transform: none;
+    align-items: flex-end;
+    text-align: right;
+  }
 }
 
 .footer__copy {
@@ -1052,6 +1233,10 @@ a:hover {
 
   .grid--works {
     grid-template-columns: repeat(2, 1fr);
+  }
+
+  .ba-card--span {
+    grid-column: 1 / -1;
   }
 
   .team-grid {

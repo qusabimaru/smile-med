@@ -162,16 +162,16 @@
           <div class="reviews__viewport">
             <div class="reviews__track" data-carousel-track>
               <blockquote class="review">
-                <p>«Затычка отзыва. После лечения все прошло комфортно. Персонал внимательный, клиника чистая.»</p>
-                <cite>Имя пациента — затычка</cite>
+                <p>«После лечения все прошло комфортно. Персонал внимательный, клиника чистая.»</p>
+                <cite>Мария Гребенькова</cite>
               </blockquote>
               <blockquote class="review">
-                <p>«Второй затычочный отзыв про гигиену и консультацию. Можно заменить на реальные цитаты из 2ГИС.»</p>
-                <cite>Инициалы — затычка</cite>
+                <p>«Компетентные врачи,нашли подход к ребёнку,дали маленькие подарочки.»</p>
+                <cite>Елена Лященко</cite>
               </blockquote>
               <blockquote class="review">
-                <p>«Третий пример текста для карусели длиннее, чтобы проверить переносы на мобильных устройствах.»</p>
-                <cite>Турист, КМВ — затычка</cite>
+                <p>«Хорошая клиника! Стоматолог профи, своё дело знает от и до. Всей проходи профилактику и лечение. Если проблемы с зубами,то Вам однозначно в эту клинику..»</p>
+                <cite>Мокуров Александр</cite>
               </blockquote>
             </div>
           </div>
@@ -205,7 +205,32 @@
         <h2 class="section__title reveal">Фото работ</h2>
         <p class="section__lead reveal" data-reveal-delay="60">Затычка: блок «до / после». Лучше использовать реальные кейсы с разрешения пациентов.</p>
         <div class="grid grid--works">
-          <div class="ph-card ph-card--wide reveal reveal--left" data-reveal-delay="0">Кейс 1: до/после (затычка)</div>
+          <div class="ph-card ph-card--wide ba-card--span reveal" data-reveal-delay="0">
+            <div class="ba-slider" data-ba-slider aria-label="Слайдер до и после">
+              <div class="ba-stage" aria-hidden="true">
+                <img class="ba-img ba-img--before" src="img/works-before.png" alt="" />
+                <div class="ba-clip" data-ba-clip>
+                  <img class="ba-img ba-img--after" src="img/works-after.png" alt="" />
+                </div>
+                <div class="ba-divider" data-ba-divider></div>
+                <div class="ba-handle" data-ba-handle></div>
+
+                <div class="ba-label ba-label--before">До</div>
+                <div class="ba-label ba-label--after">После</div>
+              </div>
+
+              <input
+                class="ba-range"
+                type="range"
+                min="0"
+                max="100"
+                value="50"
+                step="1"
+                aria-label="Перетаскивание до/после"
+                data-ba-range
+              />
+            </div>
+          </div>
           <div class="ph-card ph-card--wide reveal reveal--right" data-reveal-delay="120">Кейс 2: до/после (затычка)</div>
         </div>
       </div>
@@ -281,6 +306,10 @@
     <div class="container footer__inner reveal">
       <p class="footer__brand">«Смайл. Мед» — медицинский центр, стоматология</p>
       <p class="footer__legal">Имеются противопоказания, необходима консультация специалиста.</p>
+      <p class="footer__policies">
+        <a href="privacy-policy.html">Политика конфиденциальности</a>
+        <a href="cookie-policy.html">Политика использования cookie</a>
+      </p>
       <p class="footer__copy">&copy; <span data-year></span>. Сайт-заготовка с затычками.</p>
     </div>
   </footer>

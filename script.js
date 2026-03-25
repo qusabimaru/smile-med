@@ -149,4 +149,40 @@
     });
   }
 
+  /* Before/After slider (до/после) */
+  var baSliders = document.querySelectorAll("[data-ba-slider]");
+  baSliders.forEach(function (slider) {
+    var range = slider.querySelector("[data-ba-range]");
+    function clampPos(v) {
+      if (Number.isNaN(v)) return 50;
+      return Math.max(0, Math.min(100, v));
+    }
+
+    function applyPos(pos) {
+      var p = clampPos(pos);
+      slider.style.setProperty("--ba-pos", String(p));
+      if (range) range.value = String(p);
+    }
+
+    var initial = range ? parseFloat(range.value) : 50;
+    applyPos(initial);
+
+    if (range) {
+      range.addEventListener("input", function () {
+        applyPos(parseFloat(range.value));
+      });
+    }
+
+    slider.addEventListener("pointerdown", function () {
+      slider.dataset.dragging = "true";
+      var end = function () {
+        slider.dataset.dragging = "false";
+        window.removeEventListener("pointerup", end);
+        window.removeEventListener("pointercancel", end);
+      };
+      window.addEventListener("pointerup", end);
+      window.addEventListener("pointercancel", end);
+    });
+  });
+
 })();
