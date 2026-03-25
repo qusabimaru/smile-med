@@ -1,15 +1,15 @@
 /* Смайл. Мед — landing, mobile first */
 :root {
   --color-bg: #ffffff;
-  --color-bg-muted: #f4f7f9;
-  --color-accent: #0d6b7d;
-  --color-accent-hover: #0a5665;
-  --color-accent-soft: #e6f3f6;
-  --color-text: #1a2332;
-  --color-text-muted: #5c6b7a;
-  --color-border: #dce4ea;
-  --shadow-sm: 0 1px 3px rgba(26, 35, 50, 0.08);
-  --shadow-md: 0 8px 24px rgba(26, 35, 50, 0.1);
+  --color-bg-muted: #f7f1fb;
+  --color-accent: #7b1fa2;
+  --color-accent-hover: #641888;
+  --color-accent-soft: #efe3f7;
+  --color-text: #2e1f3f;
+  --color-text-muted: #6f5a83;
+  --color-border: #e7d7f2;
+  --shadow-sm: 0 1px 3px rgba(46, 31, 63, 0.08);
+  --shadow-md: 0 8px 24px rgba(46, 31, 63, 0.12);
   --radius: 12px;
   --radius-sm: 8px;
   --header-h: 64px;
@@ -91,6 +91,84 @@ a:hover {
   box-shadow: var(--shadow-sm);
 }
 
+/* Внутренние страницы: шапка сразу как «прокрученная», без смены при скролле */
+body:not(.page-home) .header {
+  background: #ffffff;
+  border-bottom-color: var(--color-border);
+  box-shadow: var(--shadow-sm);
+}
+
+body:not(.page-home) .nav-mobile {
+  border-bottom-color: var(--color-border);
+}
+
+/* Главная: вверху прозрачная шапка и светлый текст; после прокрутки — как обычно */
+.page-home .header .logo,
+.page-home .header .nav__link,
+.page-home .header .header__address,
+.page-home .header .header__phone,
+.page-home .header .header__burger span,
+.page-home .header .header__cta.btn--primary {
+  transition:
+    color 0.32s ease,
+    background-color 0.32s ease,
+    border-color 0.32s ease,
+    box-shadow 0.32s ease;
+}
+
+.page-home .header:not(.header--scrolled) .logo {
+  color: #fff;
+}
+
+.page-home .header:not(.header--scrolled) .logo__dot {
+  color: rgba(255, 255, 255, 0.95);
+}
+
+.page-home .header:not(.header--scrolled) .logo__med {
+  color: rgba(255, 255, 255, 0.82);
+}
+
+.page-home .header:not(.header--scrolled) .logo__icon-wrap {
+  box-shadow: 0 8px 22px rgba(0, 0, 0, 0.22);
+}
+
+.page-home .header:not(.header--scrolled) .nav__link {
+  color: rgba(255, 255, 255, 0.96);
+}
+
+.page-home .header:not(.header--scrolled) .nav__link:hover {
+  background: rgba(255, 255, 255, 0.14);
+  color: #fff;
+}
+
+.page-home .header:not(.header--scrolled) .header__address {
+  color: rgba(255, 255, 255, 0.78);
+}
+
+.page-home .header:not(.header--scrolled) .header__phone {
+  color: #fff;
+}
+
+.page-home .header:not(.header--scrolled) .header__phone:hover {
+  color: rgba(255, 255, 255, 0.95);
+}
+
+.page-home .header:not(.header--scrolled) .header__burger span {
+  background: #fff;
+}
+
+.page-home .header:not(.header--scrolled) .header__cta.btn--primary {
+  background: rgba(255, 255, 255, 0.16);
+  border: 2px solid rgba(255, 255, 255, 0.92);
+  color: #fff;
+}
+
+.page-home .header:not(.header--scrolled) .header__cta.btn--primary:hover {
+  background: rgba(255, 255, 255, 0.3);
+  border-color: #fff;
+  color: #fff;
+}
+
 .header__inner {
   display: flex;
   align-items: center;
@@ -122,7 +200,7 @@ a:hover {
 }
 
 .nav__link:hover {
-  background: rgba(13, 107, 125, 0.1);
+  background: rgba(123, 31, 162, 0.1);
   color: var(--color-accent-hover);
 }
 
@@ -246,10 +324,36 @@ a:hover {
 }
 
 .logo {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
   text-decoration: none;
   font-weight: 700;
   font-size: 1.125rem;
   color: var(--color-text);
+}
+
+.logo__icon-wrap {
+  width: 46px;
+  height: 46px;
+  border-radius: 12px;
+  overflow: hidden;
+  flex: 0 0 46px;
+  box-shadow: 0 8px 22px rgba(123, 31, 162, 0.25);
+}
+
+.logo__icon {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 18%;
+  transform: scale(1.5);
+}
+
+.logo__wordmark {
+  display: inline-flex;
+  align-items: baseline;
+  line-height: 1;
 }
 
 .logo__dot {
@@ -417,8 +521,14 @@ a:hover {
 .hero__bg {
   position: absolute;
   inset: 0;
+  /* Фото клиники + фиолетовый тон как у логотипа */
   background:
-    linear-gradient(135deg, rgba(13, 107, 125, 0.12) 0%, rgba(255, 255, 255, 0.85) 55%),
+    linear-gradient(
+      135deg,
+      rgba(93, 0, 123, 0.55) 0%,
+      rgba(123, 31, 162, 0.45) 45%,
+      rgba(82, 21, 111, 0.5) 100%
+    ),
     url("https://images.unsplash.com/photo-1629909613654-28e377c37b09?w=1200&q=70&auto=format&fit=crop") center/cover no-repeat;
   z-index: 0;
 }
@@ -426,7 +536,13 @@ a:hover {
 .hero__overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, 0.92) 100%);
+  /* К низу чуть темнее, чтобы белый текст hero оставался читаемым */
+  background: linear-gradient(
+    180deg,
+    rgba(45, 10, 62, 0.28) 0%,
+    rgba(82, 21, 111, 0.42) 55%,
+    rgba(45, 10, 62, 0.58) 100%
+  );
   z-index: 1;
 }
 
@@ -441,13 +557,16 @@ a:hover {
   font-weight: 700;
   line-height: 1.2;
   max-width: 18ch;
+  color: #fff;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.18);
 }
 
 .hero__subtitle {
   margin: 0 0 1.5rem;
   font-size: 1.0625rem;
-  color: var(--color-text-muted);
+  color: rgba(255, 255, 255, 0.92);
   max-width: 32ch;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.12);
 }
 
 .hero__actions {
@@ -459,11 +578,28 @@ a:hover {
 .hero__note {
   margin: 1.25rem 0 0;
   font-size: 0.8125rem;
-  color: var(--color-text-muted);
+  color: rgba(255, 255, 255, 0.72);
+}
+
+.hero .placeholder-note {
+  opacity: 0.95;
 }
 
 .placeholder-note {
   opacity: 0.9;
+}
+
+/* Кнопки в hero на фиолетовом фоне */
+.hero .btn--outline {
+  background: transparent;
+  color: #fff;
+  border-color: rgba(255, 255, 255, 0.92);
+}
+
+.hero .btn--outline:hover {
+  background: rgba(255, 255, 255, 0.14);
+  color: #fff;
+  border-color: #fff;
 }
 
 /* Sections */
@@ -476,7 +612,7 @@ a:hover {
 }
 
 .section--accent {
-  background: linear-gradient(160deg, var(--color-accent) 0%, #0a4d5c 100%);
+  background: linear-gradient(160deg, var(--color-accent) 0%, #52156f 100%);
   color: #fff;
 }
 
@@ -521,39 +657,63 @@ a:hover {
 }
 
 .ba-card--span {
-  /* Делаем карточку-область под слайдер без “внутренних отступов” */
-  padding: 0.25rem;
+  /* Слайдер на всю внутреннюю область рамки карточки */
+  width: 100%;
+  padding: 0;
+  display: block;
+  min-height: 0;
+  max-width: none;
+  margin: 0;
+  overflow: hidden;
   align-items: stretch;
   justify-content: stretch;
-  min-height: auto;
+}
+
+/* Карточка со слайдером: без внутренних полей, скругление задаёт рамка */
+.ph-card.ba-card--span {
+  padding: 0;
+  min-height: 0;
+  display: block;
+  text-align: left;
+  font-weight: inherit;
+  color: inherit;
 }
 
 /* Before / After slider */
 .ba-slider {
   --ba-pos: 50;
+  --ba-pos-p: 50%;
   position: relative;
   width: 100%;
   aspect-ratio: 16 / 9;
-  border-radius: calc(var(--radius) - 2px);
+  border-radius: 0;
   overflow: hidden;
   user-select: none;
   touch-action: pan-y;
+  background: var(--color-bg-muted);
 }
 
 .ba-slider::before {
   content: "";
   position: absolute;
   inset: 0;
-  background: rgba(0, 0, 0, 0.25);
+  background: rgba(0, 0, 0, 0.35);
   opacity: 0;
   transition: opacity 0.2s ease;
   z-index: 3;
   pointer-events: none;
 }
 
-.ba-slider:hover::before,
-.ba-slider[data-dragging="true"]::before {
+.ba-slider:hover::before {
   opacity: 1;
+}
+
+.ba-slider[data-dragging="true"]::before {
+  opacity: 0;
+}
+
+.ba-slider[data-near-handle="true"]::before {
+  opacity: 0;
 }
 
 .ba-stage {
@@ -572,7 +732,21 @@ a:hover {
 }
 
 .ba-img--before {
-  z-index: 1;
+  z-index: 2;
+  opacity: 1;
+  /* Показываем "до" только слева, сохраняя масштаб картинки */
+  -webkit-clip-path: inset(
+    0
+      calc(100% - var(--ba-pos-p))
+      0
+      0
+  );
+  clip-path: inset(
+    0
+      calc(100% - var(--ba-pos-p))
+      0
+      0
+  );
 }
 
 .ba-clip {
@@ -580,20 +754,24 @@ a:hover {
   top: 0;
   left: 0;
   bottom: 0;
-  width: calc(var(--ba-pos) * 1%);
-  overflow: hidden;
+  width: 100%;
+  overflow: hidden; /* обрезка управляется clip-path на изображениях */
   z-index: 2;
+}
+
+.ba-slider:hover .ba-clip {
+  overflow: hidden;
 }
 
 .ba-divider {
   position: absolute;
   top: 0;
   bottom: 0;
-  left: calc(var(--ba-pos) * 1%);
+  left: var(--ba-pos-p);
   width: 2px;
-  background: rgba(255, 255, 255, 0.92);
+  background: rgba(255, 255, 255, 0.95);
   transform: translateX(-1px);
-  opacity: 0.9;
+  opacity: 0;
   z-index: 4;
   pointer-events: none;
 }
@@ -601,25 +779,54 @@ a:hover {
 .ba-handle {
   position: absolute;
   top: 50%;
-  left: calc(var(--ba-pos) * 1%);
+  left: var(--ba-pos-p);
   transform: translate(-50%, -50%);
   width: 46px;
   height: 46px;
   border-radius: 999px;
   border: 2px solid rgba(255, 255, 255, 0.95);
-  background: rgba(0, 0, 0, 0.15);
+  background: rgba(0, 0, 0, 0.08);
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.18);
   z-index: 4;
   pointer-events: none;
+}
+
+.ba-handle::before,
+.ba-handle::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  width: 2px;
+  height: 16px;
+  background: rgba(255, 255, 255, 0.95);
+  transform: translateY(-50%);
+  border-radius: 2px;
+}
+
+.ba-handle::before {
+  left: 18px;
+}
+
+.ba-handle::after {
+  right: 18px;
+}
+
+.ba-img--after {
+  z-index: 1;
+  opacity: 1;
+  /* Чтобы "после" было видно только справа от ползунка,
+     и слева не было эффекта наложения двух картинок */
+  -webkit-clip-path: inset(0 0 0 var(--ba-pos-p));
+  clip-path: inset(0 0 0 var(--ba-pos-p));
 }
 
 .ba-label {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  padding: 0.45rem 0.75rem;
-  border-radius: 0.65rem;
-  background: rgba(0, 0, 0, 0.38);
+  padding: 0.35rem 0.6rem;
+  border-radius: 8px;
+  background: rgba(0, 0, 0, 0.42);
   color: #fff;
   font-weight: 800;
   font-size: 0.9rem;
@@ -639,9 +846,25 @@ a:hover {
   right: 10px;
 }
 
-.ba-slider:hover .ba-label,
-.ba-slider[data-dragging="true"] .ba-label {
+.ba-slider:hover .ba-label {
   opacity: 1;
+}
+
+.ba-slider[data-dragging="true"] .ba-label {
+  opacity: 0;
+}
+
+.ba-slider[data-hide-before-label="true"] .ba-label--before {
+  opacity: 0;
+}
+
+.ba-slider[data-hide-after-label="true"] .ba-label--after {
+  opacity: 0;
+}
+
+.ba-slider:hover .ba-divider,
+.ba-slider[data-dragging="true"] .ba-divider {
+  opacity: 0.9;
 }
 
 .ba-range {
@@ -1015,64 +1238,182 @@ a:hover {
   display: block;
 }
 
-/* Footer */
+/* Footer — сетка из четырёх колонок + нижняя полоса */
 .footer {
-  padding: 1.75rem 0 2rem;
-  background: var(--color-text);
+  padding: 3rem 0 1.75rem;
+  background: linear-gradient(160deg, var(--color-accent) 0%, #52156f 100%
+100%
+);
   color: rgba(255, 255, 255, 0.88);
 }
 
 .footer__inner {
-  text-align: right;
+  text-align: left;
 }
 
-.footer__brand {
-  margin: 0 0 0.5rem;
-  font-weight: 600;
-  text-align: center; /* Возвращаем исходное выравнивание текста */
+.footer__top {
+  margin-bottom: 0;
+}
+
+.footer__grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2.25rem;
+}
+
+@media (min-width: 640px) {
+  .footer__grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 2rem 2.5rem;
+  }
+}
+
+@media (min-width: 960px) {
+  .footer__grid {
+    grid-template-columns: 1.15fr 0.85fr 0.95fr 1.05fr;
+    gap: 2rem 2rem;
+  }
+}
+
+.footer__col {
+  min-width: 0;
+}
+
+.footer__brand-title {
+  margin: 0 0 0.85rem;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(1.35rem, 3vw, 1.65rem);
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: #fff;
+  line-height: 1.2;
+}
+
+.footer__brand-text {
+  margin: 0 0 1rem;
+  font-size: 0.875rem;
+  line-height: 1.55;
+  color: rgba(255, 255, 255, 0.68);
+  max-width: 28ch;
 }
 
 .footer__legal {
-  margin: 0 0 0.75rem;
-  font-size: 0.8125rem;
+  margin: 0 0 1rem;
+  font-size: 0.75rem;
   line-height: 1.45;
-  color: rgba(255, 255, 255, 0.72);
-  text-align: center; /* Возвращаем исходное выравнивание текста */
+  color: rgba(255, 255, 255, 0.5);
+  max-width: 32ch;
 }
 
-.footer__policies {
-  margin: 0 0 0.65rem;
-  font-size: 0.8125rem;
-  color: rgba(255, 255, 255, 0.8);
+.footer__social {
   display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: flex-end;
-  gap: 0.35rem;
-  flex-wrap: nowrap;
-  transform: none;
+  flex-wrap: wrap;
+  gap: 0.65rem 1rem;
+  margin: 0;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
 }
 
-.footer__policies a {
-  color: rgba(255, 255, 255, 0.9);
+.footer__social-link {
+  color: rgba(255, 255, 255, 0.82);
+  text-decoration: none;
+  transition: color var(--transition);
 }
 
-.footer__policies a:hover {
-  color: #ffffff;
+.footer__social-link:hover {
+  color: #fff;
 }
 
-@media (max-width: 639px) {
-  .footer__policies {
-    transform: none;
-    align-items: flex-end;
-    text-align: right;
-  }
+.footer__social-link--muted {
+  color: rgba(255, 255, 255, 0.45);
+}
+
+.footer__col-title {
+  margin: 0 0 1rem;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 0.8125rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.92);
+}
+
+.footer__list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.footer__list li {
+  margin: 0 0 0.55rem;
+}
+
+.footer__list a {
+  font-size: 0.875rem;
+  color: rgba(255, 255, 255, 0.65);
+  text-decoration: none;
+  transition: color var(--transition);
+}
+
+.footer__list a:hover {
+  color: #fff;
+}
+
+.footer__contacts {
+  font-size: 0.875rem;
+  line-height: 1.55;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.footer__contact-line {
+  margin: 0 0 0.65rem;
+}
+
+.footer__contact-line:last-of-type {
+  margin-bottom: 0;
+}
+
+.footer__contact-label {
+  color: rgba(255, 255, 255, 0.45);
+  margin-right: 0.25rem;
+}
+
+.footer__contact-muted {
+  color: rgba(255, 255, 255, 0.45);
+}
+
+.footer__contacts a {
+  color: rgba(255, 255, 255, 0.88);
+  text-decoration: none;
+}
+
+.footer__contacts a:hover {
+  color: #fff;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.footer__requisites-line {
+  margin: 0.85rem 0 0;
+  font-size: 0.75rem;
+  line-height: 1.45;
+  color: rgba(255, 255, 255, 0.48);
+  font-variant-numeric: tabular-nums;
+}
+
+.footer__bar {
+  margin-top: 2.5rem;
+  padding-top: 1.25rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
 }
 
 .footer__copy {
   margin: 0;
   font-size: 0.75rem;
-  color: rgba(255, 255, 255, 0.5);
+  color: rgba(255, 255, 255, 0.45);
+  line-height: 1.5;
 }
 
 /* Modal */
@@ -1236,7 +1577,7 @@ a:hover {
   }
 
   .ba-card--span {
-    grid-column: 1 / -1;
+    grid-column: 1;
   }
 
   .team-grid {

@@ -4,9 +4,9 @@
   var yearEl = document.querySelector("[data-year]");
   if (yearEl) yearEl.textContent = String(new Date().getFullYear());
 
-  /* Header: прозрачный у верха страницы, белый после прокрутки */
+  /* Header: прозрачный у верха и смена стиля только на главной (body.page-home) */
   var headerEl = document.querySelector(".header");
-  if (headerEl) {
+  if (headerEl && document.body.classList.contains("page-home")) {
     var headerScrollThreshold = 16;
     var headerTicking = false;
     function syncHeaderSolid() {
@@ -153,6 +153,8 @@
   var baSliders = document.querySelectorAll("[data-ba-slider]");
   baSliders.forEach(function (slider) {
     var range = slider.querySelector("[data-ba-range]");
+    var nearHandleRadius = 56;
+    var labelEdgeThreshold = 85;
     function clampPos(v) {
       if (Number.isNaN(v)) return 50;
       return Math.max(0, Math.min(100, v));
@@ -161,6 +163,10 @@
     function applyPos(pos) {
       var p = clampPos(pos);
       slider.style.setProperty("--ba-pos", String(p));
+      slider.style.setProperty("--ba-pos-p", String(p) + "%");
+      slider.dataset.hideBeforeLabel = p >= labelEdgeThreshold ? "true" : "false";
+      slider.dataset.hideAfterLabel =
+        p <= 100 - labelEdgeThreshold ? "true" : "false";
       if (range) range.value = String(p);
     }
 
@@ -172,6 +178,34 @@
         applyPos(parseFloat(range.value));
       });
     }
+
+    function syncNearHandle(clientX, clientY) {
+      var rect = slider.getBoundingClientRect();
+      if (!rect.width || !rect.height) return;
+      var pos = clampPos(
+        parseFloat(
+          getComputedStyle(slider).getPropertyValue("--ba-pos")
+        )
+      );
+      var handleX = rect.left + (rect.width * pos) / 100;
+      var handleY = rect.top + rect.height / 2;
+      var dx = clientX - handleX;
+      var dy = clientY - handleY;
+      var near = dx * dx + dy * dy <= nearHandleRadius * nearHandleRadius;
+      slider.dataset.nearHandle = near ? "true" : "false";
+    }
+
+    slider.addEventListener("pointermove", function (e) {
+      syncNearHandle(e.clientX, e.clientY);
+    });
+
+    slider.addEventListener("pointerenter", function (e) {
+      syncNearHandle(e.clientX, e.clientY);
+    });
+
+    slider.addEventListener("pointerleave", function () {
+      slider.dataset.nearHandle = "false";
+    });
 
     slider.addEventListener("pointerdown", function () {
       slider.dataset.dragging = "true";

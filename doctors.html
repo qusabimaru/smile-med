@@ -14,7 +14,12 @@
   <header class="header" id="header">
     <div class="container header__inner">
       <a href="index.html" class="logo" aria-label="Смайл. Мед — на главную">
-        <span class="logo__mark">Смайл</span><span class="logo__dot">.</span><span class="logo__med">Мед</span>
+        <span class="logo__icon-wrap" aria-hidden="true">
+          <img class="logo__icon" src="img/logo-brand.png" alt="" />
+        </span>
+        <span class="logo__wordmark">
+          <span class="logo__mark">Смайл</span><span class="logo__dot">.</span><span class="logo__med">Мед</span>
+        </span>
       </a>
       <nav class="nav" aria-label="Основное меню">
         <a class="nav__link" href="#services">Услуги</a>
@@ -93,13 +98,55 @@
 
   <footer class="footer">
     <div class="container footer__inner reveal">
-      <p class="footer__brand">«Смайл. Мед» — медицинский центр, стоматология</p>
-      <p class="footer__legal">Имеются противопоказания, необходима консультация специалиста.</p>
-      <p class="footer__policies">
-        <a href="privacy-policy.html">Политика конфиденциальности</a>
-        <a href="cookie-policy.html">Политика использования cookie</a>
-      </p>
-      <p class="footer__copy">&copy; <span data-year></span>. Сайт-заготовка с затычками.</p>
+      <div class="footer__top">
+        <div class="footer__grid">
+          <div class="footer__col footer__col--brand">
+            <p class="footer__brand-title">Смайл. Мед</p>
+            <p class="footer__brand-text">Современная стоматология в Ессентуках. Профессиональное лечение зубов для всей семьи.</p>
+            <p class="footer__legal">Имеются противопоказания, необходима консультация специалиста.</p>
+            <p class="footer__social">
+              <a class="footer__social-link" href="#" aria-label="ВКонтакте">VK</a>
+              <a class="footer__social-link" href="https://wa.me/79288243161" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">WA</a>
+              <a class="footer__social-link footer__social-link--muted" href="#" aria-label="Telegram">TG</a>
+            </p>
+          </div>
+          <div class="footer__col">
+            <p class="footer__col-title">Навигация</p>
+            <ul class="footer__list">
+              <li><a href="index.html#top">Главная</a></li>
+              <li><a href="index.html#services">Услуги</a></li>
+              <li><a href="index.html#advantages">Преимущества</a></li>
+              <li><a href="doctors.html">Врачи</a></li>
+              <li><a href="index.html#reviews">Отзывы</a></li>
+              <li><a href="index.html#contacts">Контакты</a></li>
+            </ul>
+          </div>
+          <div class="footer__col">
+            <p class="footer__col-title">Услуги</p>
+            <ul class="footer__list">
+              <li><a href="index.html#services">Терапия</a></li>
+              <li><a href="index.html#services">Хирургия</a></li>
+              <li><a href="index.html#services">Ортопедия</a></li>
+              <li><a href="index.html#services">Профгигиена и чистка</a></li>
+              <li><a href="privacy-policy.html">Политика конфиденциальности</a></li>
+              <li><a href="cookie-policy.html">Политика cookie</a></li>
+            </ul>
+          </div>
+          <div class="footer__col">
+            <p class="footer__col-title">Контакты</p>
+            <div class="footer__contacts">
+              <p class="footer__contact-line"><span class="footer__contact-label">Адрес:</span> г. Ессентуки, ул. Пятигорская, 117 <span class="footer__contact-muted">(3&nbsp;этаж)</span></p>
+              <p class="footer__contact-line"><span class="footer__contact-label">Телефон:</span> <a href="tel:+79288243161">+7 (928) 824-31-61</a></p>
+              <p class="footer__contact-line"><span class="footer__contact-label">Режим:</span> ежедневно 09:00–18:00</p>
+              <p class="footer__requisites-line">ИНН 2618024640 · ОГРН 1212600008598 · КПП 261801001 · рег. 27.07.2021</p>
+              <p class="footer__requisites-line">Юридический адрес: Ставропольский край, г. Ессентуки, ул. Пятигорская, д. 117</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="footer__bar">
+        <p class="footer__copy">&copy; <span data-year></span> «Смайл. Мед». Все права защищены.</p>
+      </div>
     </div>
   </footer>
 
