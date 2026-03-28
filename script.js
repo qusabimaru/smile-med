@@ -219,4 +219,16 @@
     });
   });
 
+  /* Лицензии врачей — заглушка до загрузки PDF или страницы */
+  document.querySelectorAll("[data-license-placeholder]").forEach(function (link) {
+    link.addEventListener("click", function (e) {
+      if (link.getAttribute("href") === "#") {
+        e.preventDefault();
+        alert(
+          "Добавьте ссылку на сканы лицензий или страницу «Документы». Сейчас это заглушка."
+        );
+      }
+    });
+  });
+
 })();

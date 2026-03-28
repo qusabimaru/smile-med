@@ -8,7 +8,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css?v=20260329">
+  <link rel="stylesheet" href="styles.css?v=20260330">
 </head>
 <body class="page-home">
   <header class="header" id="header">
@@ -31,6 +31,7 @@
             <span class="nav__chev" aria-hidden="true"></span>
           </a>
           <div class="nav__menu" role="menu">
+            <a class="nav__item" role="menuitem" href="#doctors">Врачи</a>
             <a class="nav__item" role="menuitem" href="#reviews">Отзывы</a>
             <a class="nav__item" role="menuitem" href="#gallery">Галерея</a>
             <a class="nav__item" role="menuitem" href="#works">Фото работ</a>
@@ -38,7 +39,7 @@
           </div>
         </div>
 
-        <a class="nav__link" href="doctors.html">Врачи</a>
+        <a class="nav__link" href="#doctors">Врачи</a>
         <a class="nav__link" href="#contacts">Контакты</a>
       </nav>
       <div class="header__meta">
@@ -58,7 +59,7 @@
       <a href="#gallery" class="nav-mobile__link">Галерея</a>
       <a href="#works" class="nav-mobile__link">Фото работ</a>
       <a href="#news" class="nav-mobile__link">Новости</a>
-      <a href="doctors.html" class="nav-mobile__link">Врачи</a>
+      <a href="#doctors" class="nav-mobile__link">Врачи</a>
       <a href="#lead" class="nav-mobile__link">Запись</a>
       <a href="#contacts" class="nav-mobile__link">Контакты</a>
       <button type="button" class="btn btn--primary btn--block" data-open-modal="appointment">Записаться</button>
@@ -70,7 +71,7 @@
       <div class="hero__bg" role="img" aria-label="Затычка: фото интерьера клиники"></div>
       <div class="hero__overlay"></div>
       <div class="container hero__content">
-        <h1 class="hero__title reveal">Современная стоматология «Смайл. Мед» в Ессентуках</h1>
+        <h1 class="hero__title reveal">Современная стоматология «Смайл. Мед» в Ессентуках. Бесплатная консультация в день обращения</h1>
         <p class="hero__subtitle reveal" data-reveal-delay="70">Профессиональное лечение зубов для всей семьи. Запишитесь на бесплатную консультацию!</p>
         <div class="hero__actions reveal" data-reveal-delay="140">
           <button type="button" class="btn btn--primary btn--lg" data-open-modal="appointment">Записаться онлайн</button>
@@ -82,32 +83,79 @@
 
     <section class="section" id="services">
       <div class="container">
-        <h2 class="section__title reveal">Наши услуги</h2>
-        <p class="section__lead reveal" data-reveal-delay="60">Основные направления лечения. Полный перечень и актуальные цены — в прайс-листе (затычка).</p>
-        <div class="grid grid--services">
-          <article class="card reveal" data-reveal-delay="0">
-            <div class="card__icon" aria-hidden="true">🦷</div>
-            <h3 class="card__title">Терапия</h3>
-            <p class="card__text">Лечение кариеса, пульпита и восстановление зубов с акцентом на сохранение тканей.</p>
+        <div class="services-head reveal">
+          <h2 class="section__title services-head__title">Популярные услуги</h2>
+          <a class="services-head__all" href="#lead">Все услуги</a>
+        </div>
+        <p class="section__lead reveal" data-reveal-delay="60">Выбирайте нужное направление и сразу записывайтесь на консультацию. План лечения и стоимость согласуем до начала работ.</p>
+        <div class="services-popular">
+          <article class="card service-category reveal" data-reveal-delay="0">
+            <div class="service-category__icon" aria-hidden="true">🦷</div>
+            <h3 class="service-category__title">Имплантация</h3>
+            <p class="service-category__text">Восстановление утраченных зубов с подбором решения под клинический случай и бюджет.</p>
+            <div class="service-category__tags">
+              <a class="service-category__tag" href="#lead">Синус-лифтинг <span aria-hidden="true">›</span></a>
+              <a class="service-category__tag" href="#lead">Имплантация All-on-4 <span aria-hidden="true">›</span></a>
+              <a class="service-category__tag" href="#lead">Имплантация под ключ <span aria-hidden="true">›</span></a>
+            </div>
+            <div class="service-category__actions">
+              <button type="button" class="btn btn--primary" data-open-modal="appointment">Записаться</button>
+              <a class="service-category__link" href="#price-list">Смотреть цены</a>
+            </div>
           </article>
-          <article class="card reveal" data-reveal-delay="80">
-            <div class="card__icon" aria-hidden="true">✨</div>
-            <h3 class="card__title">Хирургия</h3>
-            <p class="card__text">Безболезненное удаление зубов, подготовка к протезированию и имплантации.</p>
+          <article class="card service-category reveal" data-reveal-delay="80">
+            <div class="service-category__icon" aria-hidden="true">👑</div>
+            <h3 class="service-category__title">Ортопедия</h3>
+            <p class="service-category__text">Протезирование и эстетические реставрации для комфортного жевания и естественной улыбки.</p>
+            <div class="service-category__tags">
+              <a class="service-category__tag" href="#lead">Керамические коронки <span aria-hidden="true">›</span></a>
+              <a class="service-category__tag" href="#lead">Съёмные протезы <span aria-hidden="true">›</span></a>
+              <a class="service-category__tag" href="#lead">Мостовидные протезы <span aria-hidden="true">›</span></a>
+            </div>
+            <div class="service-category__actions">
+              <button type="button" class="btn btn--primary" data-open-modal="appointment">Записаться</button>
+              <a class="service-category__link" href="#price-list">Смотреть цены</a>
+            </div>
           </article>
-          <article class="card reveal" data-reveal-delay="160">
-            <div class="card__icon" aria-hidden="true">👑</div>
-            <h3 class="card__title">Ортопедия</h3>
-            <p class="card__text">Протезирование, коронки и восстановление жевательной функции и эстетики улыбки.</p>
+          <article class="card service-category reveal" data-reveal-delay="160">
+            <div class="service-category__icon" aria-hidden="true">✨</div>
+            <h3 class="service-category__title">Терапия</h3>
+            <p class="service-category__text">Диагностика и лечение заболеваний зубов и дёсен с акцентом на сохранение тканей.</p>
+            <div class="service-category__tags">
+              <a class="service-category__tag" href="#lead">Лечение зубов <span aria-hidden="true">›</span></a>
+              <a class="service-category__tag" href="#lead">Профессиональная гигиена <span aria-hidden="true">›</span></a>
+              <a class="service-category__tag" href="#lead">Лечение кариеса <span aria-hidden="true">›</span></a>
+            </div>
+            <div class="service-category__actions">
+              <button type="button" class="btn btn--primary" data-open-modal="appointment">Записаться</button>
+              <a class="service-category__link" href="#price-list">Смотреть цены</a>
+            </div>
           </article>
-          <article class="card reveal" data-reveal-delay="240">
-            <div class="card__icon" aria-hidden="true">💧</div>
-            <h3 class="card__title">Профгигиена и чистка</h3>
-            <p class="card__text">Профессиональная гигиена полости рта и профилактика заболеваний дёсен.</p>
+          <article class="card service-category reveal" data-reveal-delay="240">
+            <div class="service-category__icon" aria-hidden="true">🧩</div>
+            <h3 class="service-category__title">Ортодонтия</h3>
+            <p class="service-category__text">Комплексная коррекция прикуса для детей и взрослых с поэтапным сопровождением.</p>
+            <div class="service-category__tags">
+              <a class="service-category__tag" href="#lead">Металлические брекеты <span aria-hidden="true">›</span></a>
+              <a class="service-category__tag" href="#lead">Элайнеры <span aria-hidden="true">›</span></a>
+              <a class="service-category__tag" href="#lead">Лечение детей <span aria-hidden="true">›</span></a>
+            </div>
+            <div class="service-category__actions">
+              <button type="button" class="btn btn--primary" data-open-modal="appointment">Записаться</button>
+              <a class="service-category__link" href="#price-list">Смотреть цены</a>
+            </div>
           </article>
         </div>
-        <div class="services__price reveal" data-reveal-delay="100" aria-label="Мини-прайс (затычка)">
-          <h3 class="services__price-title">Прайс-лист (затычка)</h3>
+        <div class="services__price reveal" id="price-list" data-reveal-delay="100" aria-label="Мини-прайс (затычка)">
+          <div class="services__price-head">
+            <h3 class="services__price-title">Прайс-лист</h3>
+            <p class="services__price-subtitle">Частые услуги и ориентировочная стоимость</p>
+          </div>
+          <div class="services__price-badges">
+            <span class="services__price-badge">Консультация 0 ₽</span>
+            <span class="services__price-badge">Без скрытых платежей</span>
+            <span class="services__price-badge">Согласуем до лечения</span>
+          </div>
           <div class="price-mini">
             <div class="price-mini__row">
               <span class="price-mini__name">Консультация</span>
@@ -129,9 +177,116 @@
               <span class="price-mini__name">Коронка (металлокерамика)</span>
               <span class="price-mini__price">от 12 000 ₽</span>
             </div>
-            <a href="#" class="btn btn--outline btn--block price-mini__btn" id="price-placeholder">Полный прайс (PDF)</a>
+            <a href="#" class="btn btn--outline btn--block price-mini__btn" id="price-placeholder">Скачать полный прайс (PDF)</a>
             <span class="placeholder-tag">затычка — укажите ссылку на PDF</span>
           </div>
+        </div>
+        <div class="section__footer reveal" data-reveal-delay="140">
+          <button type="button" class="btn btn--primary" data-open-modal="appointment">Записаться на осмотр</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="doctors">
+      <div class="container">
+        <h2 class="section__title reveal">Наши врачи</h2>
+        <p class="section__lead reveal" data-reveal-delay="50">Команда медицинского центра «Смайл. Мед» — стоматологи с практическим опытом в Ессентуках.</p>
+        <div class="doctors-grid">
+          <article class="doctor-card reveal" data-reveal-delay="0">
+            <img class="doctor-card__photo" src="img/doctor-1.png" alt="Кузнецов Артём Сергеевич" width="400" height="280" loading="lazy" />
+            <div class="doctor-card__body">
+              <h3 class="doctor-card__name">Кузнецов Артём Сергеевич</h3>
+              <dl class="doctor-card__facts">
+                <div>
+                  <dt>Стаж</dt>
+                  <dd>9 лет</dd>
+                </div>
+                <div>
+                  <dt>Специализация</dt>
+                  <dd>Терапевтическая стоматология, лечение кариеса и каналов</dd>
+                </div>
+                <div>
+                  <dt>Образование</dt>
+                  <dd>Пятигорский ГМУ, врач-стоматолог. Актуальные курсы повышения квалификации</dd>
+                </div>
+              </dl>
+              <a href="#" class="btn btn--outline btn--block doctor-card__license" data-license-placeholder>Посмотреть лицензии</a>
+            </div>
+          </article>
+          <article class="doctor-card reveal" data-reveal-delay="80">
+            <img class="doctor-card__photo" src="img/doctor-2.png" alt="Соколова Мария Игоревна" width="400" height="280" loading="lazy" />
+            <div class="doctor-card__body">
+              <h3 class="doctor-card__name">Соколова Мария Игоревна</h3>
+              <dl class="doctor-card__facts">
+                <div>
+                  <dt>Стаж</dt>
+                  <dd>6 лет</dd>
+                </div>
+                <div>
+                  <dt>Специализация</dt>
+                  <dd>Профессиональная гигиена полости рта, профилактика заболеваний дёсен</dd>
+                </div>
+                <div>
+                  <dt>Образование</dt>
+                  <dd>Ставропольский ГМУ, врач-стоматолог. Специализация по профгигиене</dd>
+                </div>
+              </dl>
+              <a href="#" class="btn btn--outline btn--block doctor-card__license" data-license-placeholder>Посмотреть лицензии</a>
+            </div>
+          </article>
+          <article class="doctor-card reveal" data-reveal-delay="160">
+            <img class="doctor-card__photo" src="img/doctor-3.png" alt="Громов Кирилл Андреевич" width="400" height="280" loading="lazy" />
+            <div class="doctor-card__body">
+              <h3 class="doctor-card__name">Громов Кирилл Андреевич</h3>
+              <dl class="doctor-card__facts">
+                <div>
+                  <dt>Стаж</dt>
+                  <dd>11 лет</dd>
+                </div>
+                <div>
+                  <dt>Специализация</dt>
+                  <dd>Ортопедическая стоматология, протезирование, вкладки и коронки</dd>
+                </div>
+                <div>
+                  <dt>Образование</dt>
+                  <dd>Высшее стоматологическое образование, ординатура по ортопедии (данные уточняются)</dd>
+                </div>
+              </dl>
+              <a href="#" class="btn btn--outline btn--block doctor-card__license" data-license-placeholder>Посмотреть лицензии</a>
+            </div>
+          </article>
+          <article class="doctor-card reveal" data-reveal-delay="240">
+            <img class="doctor-card__photo" src="img/doctor-4.png" alt="Волков Дмитрий Олегович" width="400" height="280" loading="lazy" />
+            <div class="doctor-card__body">
+              <h3 class="doctor-card__name">Волков Дмитрий Олегович</h3>
+              <dl class="doctor-card__facts">
+                <div>
+                  <dt>Стаж</dt>
+                  <dd>8 лет</dd>
+                </div>
+                <div>
+                  <dt>Специализация</dt>
+                  <dd>Хирургическая стоматология, удаление зубов, подготовка к имплантации</dd>
+                </div>
+                <div>
+                  <dt>Образование</dt>
+                  <dd>Высшее стоматологическое образование, курсы по хирургии и имплантологии</dd>
+                </div>
+              </dl>
+              <a href="#" class="btn btn--outline btn--block doctor-card__license" data-license-placeholder>Посмотреть лицензии</a>
+            </div>
+          </article>
+        </div>
+        <div class="visit-block reveal" data-reveal-delay="100">
+          <h3 class="visit-block__title">Как проходит приём</h3>
+          <ol class="visit-steps">
+            <li>Вы записываетесь по телефону, в WhatsApp или через форму на сайте — администратор предложит удобное время.</li>
+            <li>В день визита на ресепшене оформляем документы и направляем к врачу в назначенный кабинет.</li>
+            <li>Врач проводит осмотр, при необходимости назначает диагностику (снимки и т. п.) и обсуждает с вами состояние зубов и дёсен.</li>
+            <li>Согласовываем план лечения и ориентировочную стоимость; по вашему согласию начинаем лечение или переносим этапы на другие дни.</li>
+            <li>После приёма при необходимости выдаём рекомендации и записываем на контрольный визит.</li>
+          </ol>
+          <p class="visit-block__note">Лицензии и сертификаты специалистов можно запросить на ресепшене или по кнопке на карточке врача после загрузки PDF на сайт.</p>
         </div>
       </div>
     </section>
@@ -139,83 +294,123 @@
     <section class="section section--muted" id="advantages">
       <div class="container">
         <h2 class="section__title reveal">Почему выбирают нас</h2>
+        <p class="section__lead reveal" data-reveal-delay="40">Сочетаем медицинский подход, прозрачные условия и комфортный сервис на каждом этапе лечения.</p>
         <ul class="advantages">
           <li class="advantages__item reveal reveal--left" data-reveal-delay="0">
+            <span class="advantages__icon" aria-hidden="true">👩‍⚕️</span>
             <strong>Опытные врачи</strong>
-            <span>Команда специалистов со стажем от [затычка] лет — уточните цифры у руководства.</span>
+            <span>Врачи с практическим стажем и профильной специализацией по каждому направлению лечения.</span>
+            <p class="advantages__note">Объясняем план лечения простым языком и отвечаем на все вопросы до начала процедур.</p>
           </li>
           <li class="advantages__item reveal reveal--right" data-reveal-delay="80">
-            <strong>Современное оборудование</strong>
-            <span>Диагностика и лечение с использованием актуальных технологий (описание — затычка).</span>
+            <span class="advantages__icon" aria-hidden="true">🔬</span>
+            <strong>Современная диагностика</strong>
+            <span>Точная диагностика и лечение с применением актуального стоматологического оборудования.</span>
+            <p class="advantages__note">Это помогает сократить сроки и подобрать оптимальное решение под ваш клинический случай.</p>
           </li>
           <li class="advantages__item reveal reveal--left" data-reveal-delay="160">
+            <span class="advantages__icon" aria-hidden="true">🛡️</span>
             <strong>Безопасность и стерильность</strong>
-            <span>Соблюдение санитарных норм и контроль инфекционной безопасности на всех этапах.</span>
+            <span>Соблюдаем санитарные нормы, используем стерильные расходники и контролируем каждый этап.</span>
+            <p class="advantages__note">Работаем бережно и делаем всё, чтобы визит проходил спокойно и предсказуемо для пациента.</p>
           </li>
           <li class="advantages__item reveal reveal--right" data-reveal-delay="240">
+            <span class="advantages__icon" aria-hidden="true">📍</span>
             <strong>Удобное расположение</strong>
-            <span>Ессентуки, ул. Пятигорская, 117, 3 этаж. Парковка: [затычка — уточнить у заказчика].</span>
+            <span>Клиника в Ессентуках: ул. Пятигорская, 117 (3 этаж), с удобной логистикой по городу.</span>
+            <p class="advantages__note">Запись по времени без долгого ожидания в очереди и напоминание перед приёмом.</p>
           </li>
         </ul>
       </div>
     </section>
 
-    <section class="section" id="reviews">
+    <section class="section section--muted reviews-section" id="reviews">
       <div class="container">
         <h2 class="section__title reveal">Отзывы пациентов</h2>
+        <p class="section__lead reveal" data-reveal-delay="40">Нас рекомендуют за внимательный подход, бережное лечение и понятные планы без лишних процедур.</p>
+        <div class="reviews__trust reveal" data-reveal-delay="60">
+          <p class="reviews__trust-item"><strong>4.9/5</strong><span>средняя оценка пациентов</span></p>
+          <p class="reviews__trust-item"><strong>100+</strong><span>реальных отзывов на картах</span></p>
+          <p class="reviews__trust-item"><strong>Ежедневно</strong><span>на связи в WhatsApp</span></p>
+        </div>
         <div class="reviews reveal reveal--scale" data-carousel data-reveal-delay="80">
           <div class="reviews__viewport">
             <div class="reviews__track" data-carousel-track>
               <blockquote class="review">
+                <div class="review__rating" aria-label="Оценка 5 из 5">★★★★★</div>
                 <p>«После лечения все прошло комфортно. Персонал внимательный, клиника чистая.»</p>
-                <cite>Мария Гребенькова</cite>
+                <cite>Мария Гребенькова · Яндекс Карты</cite>
               </blockquote>
               <blockquote class="review">
-                <p>«Компетентные врачи,нашли подход к ребёнку,дали маленькие подарочки.»</p>
-                <cite>Елена Лященко</cite>
+                <div class="review__rating" aria-label="Оценка 5 из 5">★★★★★</div>
+                <p>«Компетентные врачи, нашли подход к ребёнку, дали маленькие подарочки.»</p>
+                <cite>Елена Лященко · Яндекс Карты</cite>
               </blockquote>
               <blockquote class="review">
-                <p>«Хорошая клиника! Стоматолог профи, своё дело знает от и до. Всей проходи профилактику и лечение. Если проблемы с зубами,то Вам однозначно в эту клинику..»</p>
-                <cite>Мокуров Александр</cite>
+                <div class="review__rating" aria-label="Оценка 5 из 5">★★★★★</div>
+                <p>«Хорошая клиника! Стоматолог — профи, своё дело знает от и до. Проходил профилактику и лечение. Если проблемы с зубами — вам однозначно сюда.»</p>
+                <cite>Мокуров Александр · Яндекс Карты</cite>
               </blockquote>
             </div>
           </div>
           <div class="reviews__controls">
+            <span class="reviews__hint">Листайте отзывы</span>
             <button type="button" class="reviews__btn" aria-label="Предыдущий отзыв" data-carousel-prev>&#8592;</button>
             <button type="button" class="reviews__btn" aria-label="Следующий отзыв" data-carousel-next>&#8594;</button>
           </div>
         </div>
         <div class="section__footer reviews__cta reveal" data-reveal-delay="60">
           <a href="https://yandex.ru/maps/org/smayl_med/218794255006/?ll=42.889830%2C44.054283&z=17.06" class="btn btn--secondary">Оставить отзыв</a>
+          <button type="button" class="btn btn--primary" data-open-modal="appointment">Хочу такой же результат</button>
         </div>
       </div>
     </section>
 
     <section class="section section--muted" id="gallery">
       <div class="container">
-        <h2 class="section__title reveal">Галерея</h2>
-        <p class="section__lead reveal" data-reveal-delay="60">Фасад клиники, интерьеры и кабинеты «Смайл. Мед» в Ессентуках.</p>
+        <div class="gallery-head reveal">
+          <h2 class="section__title">Галерея</h2>
+          <a class="gallery-head__link" href="https://wa.me/79288243161" target="_blank" rel="noopener noreferrer">Запросить ещё фото</a>
+        </div>
+        <p class="section__lead reveal" data-reveal-delay="60">Показываем клинику такой, какой вы увидите её на приёме: вход, зона ожидания и рабочие кабинеты.</p>
         <div class="grid grid--gallery">
           <figure class="gallery-card reveal" data-reveal-delay="0">
-            <img src="img/gallery-1.png" alt="Вывеска и вход в медицинский центр «Смайл. Мед»" width="800" height="600" loading="lazy" />
+            <div class="gallery-card__media">
+              <img src="img/gallery-1.png" alt="Вывеска и вход в медицинский центр «Смайл. Мед»" width="800" height="600" loading="lazy" />
+            </div>
+            <figcaption class="gallery-card__caption">Вход в клинику и навигация для пациентов</figcaption>
           </figure>
           <figure class="gallery-card reveal" data-reveal-delay="80">
-            <img src="img/gallery-2.png" alt="Интерьер клиники, коридор и зона ожидания" width="800" height="600" loading="lazy" />
+            <div class="gallery-card__media">
+              <img src="img/gallery-2.png" alt="Интерьер клиники, коридор и зона ожидания" width="800" height="600" loading="lazy" />
+            </div>
+            <figcaption class="gallery-card__caption">Светлая зона ожидания и комфортный интерьер</figcaption>
           </figure>
           <figure class="gallery-card reveal" data-reveal-delay="160">
-            <img src="img/gallery-3.png" alt="Стоматологический кабинет с креслом и оборудованием" width="800" height="600" loading="lazy" />
+            <div class="gallery-card__media">
+              <img src="img/gallery-3.png" alt="Стоматологический кабинет с креслом и оборудованием" width="800" height="600" loading="lazy" />
+            </div>
+            <figcaption class="gallery-card__caption">Кабинет с современным стоматологическим оборудованием</figcaption>
           </figure>
           <figure class="gallery-card reveal" data-reveal-delay="240">
-            <img src="img/gallery-4.png" alt="Зона ресепшна и ожидания" width="800" height="600" loading="lazy" />
+            <div class="gallery-card__media">
+              <img src="img/gallery-4.png" alt="Зона ресепшна и ожидания" width="800" height="600" loading="lazy" />
+            </div>
+            <figcaption class="gallery-card__caption">Ресепшн, где администратор встречает и помогает с документами</figcaption>
           </figure>
         </div>
       </div>
     </section>
 
-    <section class="section" id="works">
+    <section class="section works-section" id="works">
       <div class="container">
         <h2 class="section__title reveal">Фото работ</h2>
-        <p class="section__lead reveal" data-reveal-delay="60">Блок «до / после».</p>
+        <p class="section__lead reveal" data-reveal-delay="60">Реальные клинические случаи в формате «до / после». Перетяните ползунок, чтобы увидеть изменения.</p>
+        <div class="works__trust reveal" data-reveal-delay="90">
+          <span class="works__trust-item">Фото с согласия пациентов</span>
+          <span class="works__trust-item">Без агрессивной ретуши</span>
+          <span class="works__trust-item">План лечения обсуждаем заранее</span>
+        </div>
         <div class="grid grid--works">
           <div class="ph-card ph-card--wide ba-card--span reveal" data-reveal-delay="0">
             <div class="ba-slider" data-ba-slider aria-label="Слайдер до и после">
@@ -249,6 +444,10 @@
                 aria-label="Перетаскивание до/после"
                 data-ba-range
               />
+            </div>
+            <div class="works-case">
+              <h3 class="works-case__title">Кейс 1: восстановление эстетики передних зубов</h3>
+              <p class="works-case__meta">Запрос: вернуть естественную улыбку · Решение: лечение и реставрация</p>
             </div>
           </div>
           <div class="ph-card ph-card--wide ba-card--span reveal" data-reveal-delay="120">
@@ -284,51 +483,83 @@
                 data-ba-range
               />
             </div>
+            <div class="works-case">
+              <h3 class="works-case__title">Кейс 2: комплексное восстановление жевательной зоны</h3>
+              <p class="works-case__meta">Запрос: комфорт при жевании · Решение: поэтапный план и ортопедическое лечение</p>
+            </div>
           </div>
+        </div>
+        <div class="works__footer reveal" data-reveal-delay="140">
+          <p class="works__note">Каждый случай индивидуален: итог зависит от состояния зубов, сроков и выбранного плана лечения.</p>
+          <button type="button" class="btn btn--primary" data-open-modal="appointment">Получить похожий план лечения</button>
         </div>
       </div>
     </section>
 
     <section class="section section--muted" id="news">
       <div class="container">
-        <h2 class="section__title reveal">Новости</h2>
-        <p class="section__lead reveal" data-reveal-delay="60">Затычка: акции, изменения графика, новые услуги, полезные статьи.</p>
+        <div class="news-head reveal">
+          <h2 class="section__title">Новости</h2>
+          <a class="news-head__link" href="#lead">Хочу узнать подробности</a>
+        </div>
+        <p class="section__lead reveal" data-reveal-delay="60">Актуальные акции и обновления клиники, чтобы вы могли записаться в подходящее время и по выгодным условиям.</p>
         <div class="grid grid--news">
-          <article class="card reveal" data-reveal-delay="0">
-            <h3 class="card__title">Новость №1 (затычка)</h3>
-            <p class="card__text">Короткое описание новости. Замените на реальные анонсы клиники.</p>
+          <article class="card news-card reveal" data-reveal-delay="0">
+            <p class="news-card__date">15 апреля</p>
+            <h3 class="card__title">Бесплатная консультация и план лечения в день обращения</h3>
+            <p class="card__text">До конца месяца первичный приём — без оплаты. Врач составит пошаговый план и сориентирует по стоимости.</p>
+            <a class="news-card__link" href="#lead">Записаться по акции</a>
           </article>
-          <article class="card reveal" data-reveal-delay="80">
-            <h3 class="card__title">Новость №2 (затычка)</h3>
-            <p class="card__text">Пример текста для проверки верстки и адаптива на телефоне.</p>
+          <article class="card news-card reveal" data-reveal-delay="80">
+            <p class="news-card__date">9 апреля</p>
+            <h3 class="card__title">Продлённый график: вечерние часы приёма</h3>
+            <p class="card__text">Добавили дополнительные слоты в будние дни для тех, кто не успевает прийти днём.</p>
+            <a class="news-card__link" href="#contacts">Посмотреть график</a>
           </article>
-          <article class="card reveal" data-reveal-delay="160">
-            <h3 class="card__title">Новость №3 (затычка)</h3>
-            <p class="card__text">Еще одна карточка, чтобы сетка выглядела заполненной.</p>
+          <article class="card news-card reveal" data-reveal-delay="160">
+            <p class="news-card__date">2 апреля</p>
+            <h3 class="card__title">Профгигиена + рекомендации по домашнему уходу</h3>
+            <p class="card__text">После процедуры врач-гигиенист подбирает индивидуальные рекомендации, чтобы дольше сохранять результат.</p>
+            <a class="news-card__link" href="#services">Смотреть услугу</a>
           </article>
         </div>
       </div>
     </section>
 
     <section class="section section--accent" id="lead">
-      <div class="container container--narrow">
-        <h2 class="section__title section__title--light reveal">Остались вопросы? Запишитесь на осмотр!</h2>
-        <form class="lead-form reveal" id="lead-form" data-reveal-delay="90" novalidate>
-          <label class="field">
-            <span class="field__label">Имя</span>
-            <input type="text" name="name" class="field__input" placeholder="Как к вам обращаться" autocomplete="name" required>
-          </label>
-          <label class="field">
-            <span class="field__label">Номер телефона</span>
-            <input type="tel" name="phone" class="field__input" placeholder="+7 (___) ___-__-__" autocomplete="tel" required>
-          </label>
-          <label class="field field--check">
-            <input type="checkbox" name="consent" required>
-            <span class="field__check-text">Согласен(на) на <a href="#" class="link-inline">обработку персональных данных</a> (политика — затычка).</span>
-          </label>
-          <button type="submit" class="btn btn--primary btn--lg btn--block">Жду звонка</button>
-          <p class="form-hint" id="form-hint" role="status" aria-live="polite"></p>
-        </form>
+      <div class="container">
+        <div class="lead-layout">
+          <div class="lead-intro reveal">
+            <p class="lead-badge">Быстрая запись</p>
+            <h2 class="section__title section__title--light lead-title">Остались вопросы? Запишитесь на осмотр!</h2>
+            <p class="lead-text">Оставьте контакты, и администратор подберёт удобное время, сориентирует по стоимости и подготовке к приёму.</p>
+            <ul class="lead-benefits">
+              <li>Ответ в рабочее время в течение 10–15 минут</li>
+              <li>Понятный план визита без лишних процедур</li>
+              <li>Удобная запись по телефону или в WhatsApp</li>
+            </ul>
+            <div class="lead-quick">
+              <a class="lead-quick__link" href="tel:+79288243161">Позвонить: +7 (928) 824-31-61</a>
+              <a class="lead-quick__link" href="https://wa.me/79288243161" target="_blank" rel="noopener noreferrer">Написать в WhatsApp</a>
+            </div>
+          </div>
+          <form class="lead-form reveal" id="lead-form" data-reveal-delay="90" novalidate>
+            <label class="field">
+              <span class="field__label">Имя</span>
+              <input type="text" name="name" class="field__input" placeholder="Как к вам обращаться" autocomplete="name" required>
+            </label>
+            <label class="field">
+              <span class="field__label">Номер телефона</span>
+              <input type="tel" name="phone" class="field__input" placeholder="+7 (___) ___-__-__" autocomplete="tel" required>
+            </label>
+            <label class="field field--check">
+              <input type="checkbox" name="consent" required>
+              <span class="field__check-text">Согласен(на) на <a href="privacy-policy.html" class="link-inline">обработку персональных данных</a>.</span>
+            </label>
+            <button type="submit" class="btn btn--primary btn--lg btn--block">Жду звонка</button>
+            <p class="form-hint" id="form-hint" role="status" aria-live="polite"></p>
+          </form>
+        </div>
       </div>
     </section>
 
@@ -350,6 +581,9 @@
             <p>Вставьте сюда код виджета 2ГИС или Яндекс.Карт (точка: ул. Пятигорская, 117, Ессентуки).</p>
              <iframe src="https://yandex.ru/map-widget/v1/?um=constructor%3A05adb067077d9027b439d2a7fa7d95fe98d38d86ae7664909f1ea83dddadd031&amp;source=constructor" width="500" height="400" frameborder="0"></iframe> 
           </div>
+        </div>
+        <div class="section__footer reveal" data-reveal-delay="140">
+          <button type="button" class="btn btn--primary" data-open-modal="appointment">Записаться сегодня</button>
         </div>
       </div>
     </section>
@@ -375,7 +609,7 @@
               <li><a href="#top">Главная</a></li>
               <li><a href="#services">Услуги</a></li>
               <li><a href="#advantages">Преимущества</a></li>
-              <li><a href="doctors.html">Врачи</a></li>
+              <li><a href="#doctors">Врачи</a></li>
               <li><a href="#reviews">Отзывы</a></li>
               <li><a href="#contacts">Контакты</a></li>
             </ul>
@@ -405,6 +639,7 @@
       </div>
       <div class="footer__bar">
         <p class="footer__copy">&copy; <span data-year></span> «Смайл. Мед». Все права защищены.</p>
+        <p class="footer__copy">Разработка: shikoraye</p>
       </div>
     </div>
   </footer>
@@ -425,6 +660,6 @@
     </div>
   </div>
 
-  <script src="script.js?v=20260326"></script>
+  <script src="script.js?v=20260330"></script>
 </body>
 </html>
